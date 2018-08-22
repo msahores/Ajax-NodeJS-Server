@@ -1,5 +1,5 @@
 # Ajax-NodeJS-Server
-Basic Ajax requests to NodeJS Server
-1-"npm i"
-2-"npm start" to run node server
-3-open client
+Basic Ajax requests to NodeJS Server<br>
+npm i<br>
+npm start<br>
+open client.html
