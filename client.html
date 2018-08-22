@@ -1,0 +1,43 @@
+<html>
+	<head>
+		<title>Ajax Request To NODE Server</title>
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script type="text/javascript">
+            const port = 3000;
+            
+            var data = {};
+            data.title = "title";
+            data.message = "message";
+
+            $(() => {
+                $('#get').click(function(e){
+                    e.preventDefault();
+
+                    $.ajax({
+                        type: 'GET',
+                        data: data,
+                        url: 'http://localhost:' + port,
+                        success: () => { console.log("CLIENT: Get Success");},
+                        error: () => {console.log("Error")}
+                    });
+                });
+                
+                $('#post').click(function(e){
+                    e.preventDefault();
+                    
+                    $.ajax({
+                        type: 'POST',
+                        data: data,
+                        url: 'http://localhost:' + port,
+                        success: () => { console.log("CLIENT: Post Success");},
+                        error  : function() { console.log('Error');}
+                    });
+                })
+            });
+        </script>
+    </head>
+    <body>
+        <button id="get">GET Request</button>
+        <button id="post">POST Request</button>
+    </body>
+</html>
